@@ -91,7 +91,7 @@ class ViewController: UIViewController {
         
         let urlString = "https://pagalworld3.org/14475/variation/190K/02%20Pal%20-%20Jalebi%20-%20Arijit%20Singh.mp3"
         
-        if let musicString = urlString.removingPercentEncoding, let mp3String = musicString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL(string: mp3String) {
+        if let url = URL(string: urlString) ?? URL(string: urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) {
             
             
             musicPlayer = AVPlayer(url: url)
